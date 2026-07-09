@@ -20,38 +20,41 @@ Cette application permet de gérer un système de leagues Path of Exile avec :
 - **Maven** (Build)
 
 ## 🏗️ Architecture
+
+```text
 src/main/java/net/ent/entc/poeleague/
 ├── PoeleagueApplication.java          # Point d'entrée Spring Boot
 └── models/
-├── entities/                       # Entités JPA
-│   ├── AbstractEntity.java
-│   ├── Challenge.java
-│   ├── League.java
-│   ├── Personnage.java
-│   ├── EntitiesFactory.java        # Factory pour créer les entités
-│   ├── communs/                    # Utilitaires de validation
-│   └── referencies/
-│       └── LabySpecialite.java     # Enum des builds
-│
-├── repositories/                   # Couche d'accès aux données (Spring Data JPA)
-│   ├── ChallengeRepository.java
-│   ├── LeagueRepository.java
-│   └── PersonnageRepository.java
-│
-└── facade/                         # Couche métier
-├── IFacade.java                # Interface principale (façade)
-├── FacadeImpl.java             # Implémentation qui orchestre les métiers
-├── challenge/
-│   ├── IChallengeMetier.java
-│   └── ChallengeImpl.java
-├── league/
-│   ├── ILeagueMetier.java
-│   └── LeagueImpl.java
-├── personnage/
-│   ├── IPersonnageMetier.java
-│   └── PersonnageImpl.java
-└── exception/
-└── FacadeMetierException.java
+    ├── entities/                       # Entités JPA
+    │   ├── AbstractEntity.java
+    │   ├── Challenge.java
+    │   ├── League.java
+    │   ├── Personnage.java
+    │   ├── EntitiesFactory.java        # Factory pour créer les entités
+    │   ├── communs/                    # Utilitaires de validation
+    │   └── referencies/
+    │       └── LabySpecialite.java     # Enum des builds
+    │
+    ├── repositories/                   # Couche d'accès aux données (Spring Data JPA)
+    │   ├── ChallengeRepository.java
+    │   ├── LeagueRepository.java
+    │   └── PersonnageRepository.java
+    │
+    └── facade/                         # Couche métier
+        ├── IFacade.java                # Interface principale (façade)
+        ├── FacadeImpl.java             # Implémentation qui orchestre les métiers
+        ├── challenge/
+        │   ├── IChallengeMetier.java
+        │   └── ChallengeImpl.java
+        ├── league/
+        │   ├── ILeagueMetier.java
+        │   └── LeagueImpl.java
+        ├── personnage/
+        │   ├── IPersonnageMetier.java
+        │   └── PersonnageImpl.java
+        └── exception/
+            └── FacadeMetierException.java
+```
 
 ## 📐 Modèle de données
 
@@ -123,6 +126,7 @@ PERSONNAGE;<position>;<pseudo>;<build>;<level>
 ```
 
 **Exemple** :
+
 ```csv
 LEAGUE;Crucible;07/04/2023;;
 CHALLENGE;Beginner's Basics;Complete these basic tasks;3;
