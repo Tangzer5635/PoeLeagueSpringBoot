@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: poeleague
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_poe
+    username: postgres
+    password: azerty+35
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
